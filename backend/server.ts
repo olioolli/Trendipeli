@@ -174,7 +174,7 @@ const addUser = (username: string) => {
 }
 
 const handleStartNextRound = async () => {
-    if (gameState.isRoundDone && !isAllPlayerNext()) return;
+    if (!gameState.isRoundDone || !isAllPlayerNext()) return;
 
     gameState.playerStates.forEach(state => {
         state.isDone = false
